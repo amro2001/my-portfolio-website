@@ -131,35 +131,42 @@ declare module 'astro:content' {
   slug: "e-commerce-inventory-management";
   body: string;
   collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"MUNRoom.md": {
+	id: "MUNRoom.md";
+  slug: "munroom";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 "book-management-system.md": {
 	id: "book-management-system.md";
   slug: "book-management-system";
   body: string;
   collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
-"markdown-mystery-tour.md": {
-	id: "markdown-mystery-tour.md";
-  slug: "markdown-mystery-tour";
+"digital_clock.md": {
+	id: "digital_clock.md";
+  slug: "digital_clock";
   body: string;
   collection: "projects";
-  data: any
-} & { render(): Render[".md"] };
-"scrabble copy.md": {
-	id: "scrabble copy.md";
-  slug: "scrabble-copy";
-  body: string;
-  collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 "scrabble.md": {
 	id: "scrabble.md";
   slug: "scrabble";
   body: string;
   collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"tic_tac_toe_java.md": {
+	id: "tic_tac_toe_java.md";
+  slug: "tic_tac_toe_java";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 };
 
@@ -171,5 +178,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = never;
+	export type ContentConfig = typeof import("./../src/content/config.js");
 }
