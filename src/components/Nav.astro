@@ -105,10 +105,9 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 					))
 				}
 			</div>
-			<button class="download-button" onclick="window.location.href='/public/assets/Amro_Elgammal_Resume.pdf'">
-				Download Resume
+			<button class="download-button">
+				<a href="/Amro_Elgammal_Resume.pdf" download>Download Resume</a>
 			</button>
-
 			<div class="theme-toggle">
 				<ThemeToggle />
 			</div>
@@ -282,6 +281,12 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
     text-decoration: none;
     cursor: pointer;
     transition: background-color var(--theme-transition), color var(--theme-transition);
+	}
+	.download-button a {
+     	color: var(--gray-0);
+		text-decoration: none;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
 	}
 	.download-button:hover,
 	.download-button:focus {
