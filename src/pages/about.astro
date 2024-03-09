@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+import { Image } from 'astro:assets';
 ---
 
 <BaseLayout title="About | Amro Elgammal" description="About Amro Elgammal">
@@ -12,11 +13,12 @@ import Hero from '../components/Hero.astro';
 				title="About"
 				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
 			>
-				<img
+				<Image
+					alt="Amro Elgammal"
 					width="1553"
 					height="873"
-					src="/public/assets/portrait.jpg"
-					alt="Amro Elgammal"
+					src="/assets/portrait.jpg"
+					loading=eager
 				/>
 			</Hero>
 
@@ -122,7 +124,7 @@ import Hero from '../components/Hero.astro';
 			</section>
 		</main>
 
-
+		<ContactCTA />
 	</div>
 </BaseLayout>
 
