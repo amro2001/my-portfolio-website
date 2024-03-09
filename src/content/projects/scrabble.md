@@ -13,4 +13,4 @@ tags:
 Crafted an engaging 2-player, competitive, timed Scrabble game that seamlessly blends computer hardware interaction through an Arduino Uno controller with Python scripting. This innovative project not only challenges players' vocabulary skills but also introduces a unique hardware and software synergy, providing an immersive and dynamic gaming experience. The Arduino Uno serves as the game controller, adding a tactile dimension to the traditional Scrabble gameplay. 
 
 **GitHub Repository:**
-- [Project Repository](https://github.com/amro2001/Book_Management_System)
+- [Project Repository](https://github.com/amro2001/Scrabble-Arduino-Uno)
