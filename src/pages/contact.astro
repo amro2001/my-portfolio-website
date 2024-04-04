@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout title="Contact | Amro Elgammal" description="Contact Amro Elgammal">
+  <div class="flex-container">
+    <div class="text-center">
+      <h1 class="main-heading text-swipe-animation">Contact me</h1>
+      <p>Feel free to reach out to me using the form below.</p>
+    </div>
+  <div class="wrapper-contact">
+    <section>
+      <form action="https://api.web3forms.com/submit" method="POST" id="form">
+        <input type="hidden" name="access_key" value="e1716906-feae-4db4-ad33-73259754bb58">
+        <div class="form-block-row">
+          <div class="form-control1">
+            <label for="first-name">First Name</label>
+            <input id="first-name" name="first name" type="text" />
+          </div>
+          <div class="form-control1">
+            <label for="last-name">Last Name</label>
+            <input id="last-name" name="last name" type="text" />
+          </div>
+        </div>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" />
+        </div>
+        <div class="form-control">
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel" />
+        </div>
+        <div class="form-control">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" />
+        </div>
+        <div class="form-control">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="8"></textarea>
+        </div>
+        <button class="contact-form-submit-button">
+          Send
+        </button>
+      </form>
+    </section>     
+  </div>
+
+  </div>
+</BaseLayout>
+<script src="https://web3forms.com/client/script.js" async defer></script>
+
+<style lang="scss">
+  .text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .wrapper-contact {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    section {
+      flex: 1;
+    }
+  }
+  #form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 0.75rem;
+    .form-block-row {
+      align-self: center;
+      display: flex;
+      gap: 1rem;
+    }
+  }
+  .form-control {
+    flex: 1;
+  }
+
+  .form-control input {
+    width: 100%;
+  }
+
+
+  .form-control label {
+    margin-bottom: 3px; // Adjust the spacing between label and input
+    color: var(--link-color);
+  }
+  .form-control1 label {
+    margin-bottom: 3px; // Adjust the spacing between label and input
+    color: var(--link-color);
+  }
+
+input,
+textarea {
+  height: 30px;
+  background: transparent;
+  color: #000;
+  border: 1px solid var(--light-theme-color);
+  /* Use the light theme color variable */
+  display: flex;
+  
+}
+textarea{
+  width: 100%; /* Set width to 100% */
+  resize: none; /* Prevent resizing */
+  min-height: 140px; /* Set a minimum height to ensure it's not too small */
+  height: auto;
+}
+
+/* Apply dark theme styles when the theme is toggled */
+.theme-dark input,
+.theme-dark textarea {
+  color: #fff;
+  border: 1px solid var(--dark-theme-color);
+  /* Use the dark theme color variable */
+}
+
+html.theme-dark input,
+body.theme-dark input,
+html.theme-dark textarea,
+body.theme-dark textarea {
+  color: #fff;
+  border: 1px solid var(--dark-theme-color);
+  /* Use the dark theme color variable */
+}
+.contact-form-submit-button {
+  background-color: var(--accent-regular);
+  color: var(--gray-0);
+  border: none;
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  border-radius: 0.25rem; /* Adjust border radius as needed */
+  cursor: pointer;
+  transition: background-color var(--theme-transition), color var();
+  font-size: 1.1rem; /* Adjust the font size as needed */
+  border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+
+}
+
+.contact-form-submit-button:hover,
+.contact-form-submit-button:focus {
+  background-color: var(--accent-hover)
+}
+
+
+  @media (min-width: 50em) {
+    .wrapper-contact {
+      gap: 2rem;
+      flex-direction: column;
+    }
+    .form-control {
+    flex: unset; /* Reset flex property */
+    width: 100%; /* Adjust width as needed */
+    }
+  }
+</style>
+
