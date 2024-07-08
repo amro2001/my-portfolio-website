@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
-import Button from '../components/Button.astro';
+
 ---
 
 <BaseLayout title="Contact | Amro Elgammal" description="Contact Amro Elgammal">
@@ -54,20 +53,33 @@ import Button from '../components/Button.astro';
 <!-- Step 2: Add the Web3Forms Script -->
 <script src="https://web3forms.com/client/script.js" async defer></script>
 
-<!-- Client Side Validation -->
+
+<!-- Client Side Validation with SweetAlert2 -->
 <script>
   // Get the form element by ID
+  import Swal from 'sweetalert2';
+
   const form = document.getElementById('contact-form');
 
   // Check if the form element exists before adding the event listener
   if (form) {
     form.addEventListener('submit', function(e) {
       // Use type assertion to ensure the element is an HTMLTextAreaElement
-      const hCaptchaResponse = (form.querySelector('textarea[name=h-captcha-response]') as HTMLTextAreaElement).value;
+      const hCaptchaResponse = (form.querySelector('textarea[name=h-captcha-response]') as HTMLTextAreaElement)?.value;
 
+      // Check if hCaptcha response is empty
       if (!hCaptchaResponse) {
-        e.preventDefault();
-        alert("Please complete the captcha field.");
+        e.preventDefault(); // Prevent form submission
+
+        // Show a SweetAlert2 popup with a custom message
+        Swal.fire({
+          title: 'Captcha Required',
+          text: 'Please complete the captcha before submitting the form.',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
+
+        return; // Exit the function if captcha is not completed
       }
     });
   }
