@@ -1,16 +1,13 @@
 ---
-
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
-import BaseLayout from '../layouts/BaseLayout.astro';
+	import BaseLayout from '../layouts/BaseLayout.astro';
 
-import  SpeedInsights  from "@vercel/speed-insights/astro"
+import SpeedInsights from "@vercel/speed-insights/astro"
 
 // Component Imports
-
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
-
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
@@ -33,9 +30,9 @@ import { Image } from 'astro:assets';
 					<div class="roles">
 						<Pill><Icon icon="code" size="1.33em" /> Software Developer</Pill>
 						<Pill><Icon icon="hardware" size="1.33em" /> FPGA and Computer Hardware</Pill>
-						<Pill><Icon icon="project_management" size="1.33em" /> Project Management and Technical Support</Pill>
+						<Pill><Icon icon="project_management" size="1.33em" /> Project Management </Pill>
+						<Pill><Icon icon="strategy" size="1.33em" /> Technical Support</Pill>
 					</div>
-				
 				</Hero>
 
 				<Image
@@ -44,6 +41,7 @@ import { Image } from 'astro:assets';
 					height="620"
 					src="/assets/portrait.jpg"
 					loading="eager"
+					class="portrait"
 				/>
 			</header>
 		</div>
@@ -57,15 +55,34 @@ import { Image } from 'astro:assets';
 		flex-direction: column;
 		align-items: center;
 		gap: 2rem;
+		padding: 1rem;
+		text-align: center; /* Ensure the text is centered on smaller screens */
 	}
 
 	.roles {
-    margin-top: 0.5rem;
-    display: flex;
-    gap: 0.5rem;
-	}
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap; /* Ensure the pills wrap on smaller screens */
+  justify-content: center; /* Center the pills */
+  width: 100%; /* Ensure pills take the full width of the container */
+  max-width: 100%; /* Prevent pills from exceeding the container width */
+  overflow: hidden; /* Prevent overflowing content */
+}
 
+.pill {
+  flex: 1 1 auto; /* Allow pills to grow and shrink based on available space */
+  text-align: center;
+  padding: 0.5rem 1rem;
+  max-width: 100%; /* Ensure pills do not overflow */
+  white-space: nowrap; /* Prevent text from wrapping inside pills */
+}
 
+@media (min-width: 50em) {
+  .roles {
+    justify-content: flex-start;
+  }
+}
 
 	.hero img {
 		aspect-ratio: 5 / 4;
@@ -73,6 +90,8 @@ import { Image } from 'astro:assets';
 		object-position: top;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-md);
+		width: 100%; /* Make the image responsive */
+		max-width: 400px; /* Limit the maximum width */
 	}
 
 	@media (min-width: 50em) {
@@ -81,16 +100,34 @@ import { Image } from 'astro:assets';
 			grid-template-columns: 6fr 4fr;
 			padding-inline: 2.5rem;
 			gap: 3.75rem;
+			text-align: left; /* Align text left on larger screens */
 		}
 
 		.roles {
-        display: flex;
-    	}
+			display: flex;
+		}
 
 		.hero img {
 			aspect-ratio: 3 / 4;
 			border-radius: 4.5rem;
 			object-fit: cover;
+			width: auto; /* Adjust image size for larger screens */
+		}
+	}
+
+	/* Additional media query for very small screens */
+	@media (max-width: 25em) {
+		.hero {
+			gap: 1rem;
+			padding: 0.5rem;
+		}
+
+		.hero img {
+			max-width: 300px; /* Further limit image size on very small screens */
+		}
+
+		.roles {
+			gap: 0.25rem;
 		}
 	}
 
@@ -99,6 +136,7 @@ import { Image } from 'astro:assets';
 	.section {
 		display: grid;
 		gap: 2rem;
+		padding: 1rem;
 	}
 
 	.with-background {
