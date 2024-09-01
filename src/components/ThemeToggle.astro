@@ -75,23 +75,29 @@ import Icon from './Icon.astro';
 			const button = this.querySelector('button')!;
 
 			/** Set the theme to dark/light mode. */
-			const setTheme = (dark: boolean) => {
+			const setTheme = (dark) => {
 				document.documentElement.classList[dark ? 'add' : 'remove']('theme-dark');
 				button.setAttribute('aria-pressed', String(dark));
+				// Save the user's preference in localStorage
+				localStorage.setItem('theme', dark ? 'dark' : 'light');
 			};
-			document.documentElement.classList.add('theme-dark');
 
-			// Toggle the theme when a user clicks the button.
+			// Get the saved theme from localStorage
+			const savedTheme = localStorage.getItem('theme');
+			const isDarkMode = savedTheme === 'dark' || (savedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+			// Initialize the theme based on the saved preference or system preference
+			setTheme(isDarkMode);
+
+			// Toggle the theme when a user clicks the button
 			button.addEventListener('click', () => setTheme(!this.isDark()));
-
-
-			// Initialize button state to reflect current theme.
-			setTheme(this.isDark());
 		}
 
 		isDark() {
 			return document.documentElement.classList.contains('theme-dark');
 		}
 	}
+
 	customElements.define('theme-toggle', ThemeToggle);
 </script>
+
