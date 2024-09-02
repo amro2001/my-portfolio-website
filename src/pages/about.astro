@@ -1,222 +1,286 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 import { Image } from 'astro:assets';
 ---
 
 <BaseLayout title="About | Amro Elgammal" description="About Amro Elgammal">
-	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
-			>
-				<Image
-					alt="Amro Elgammal"
-					width="1553"
-					height="873"
-					src="/assets/portrait.jpg"
-					loading=eager
-				/>
-			</Hero>
+    <!-- Scroll Progress Bar -->
+    <div id="progress-bar"></div>
 
-			<section>
-				<h2 class="section-title">Background</h2>
-				<div class="content">
-					<p>
-						As a seasoned fifth-year co-op computer engineering student, my journey has been shaped by a passion for harnessing technology to overcome challenges and make a tangible impact. Through a blend of academic rigor and hands-on professional experiences, I've cultivated a diverse technical skill set and I am consistently eager to refine my skills and stay abreast of new technologies.
-					</p>
-					<p>
-						My commitment to problem-solving is not only reflected in my adeptness with coding languages and Hardware Description Languages (HDL), but also in my dedication to mastering the intricacies of embedded systems. 
-						I always aim to get a holistic understanding in order to seamlessly bridge the gap between software and hardware and create innovative solutions.
-					</p>
-					<p>
-						I've honed my communication and collaboration abilities through engaging in diverse projects and working within interdisciplinary teams. 
-						This collaborative spirit, coupled with a relentless drive for excellence, propels me forward in my quest to contribute meaningfully to impactful projects.
-					</p>
-					<p>
-						Eager to bring this amalgamation of skills and passion to a dynamic organization, I am committed to not only meeting the challenges of the ever-evolving tech landscape but also driving continuous growth as an engineering student. 
-						My journey thus far is a testament to my resilience, adaptability, and unwavering dedication to leveraging technology for positive change.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p>Memorial University of Newfoundland</p>
-					<p>Bachelor of Engineering: Computer Engineering | <strong style="color: #c561f6;">CGPA: 4.00</strong></p>
-					<p><strong style="color: #c561f6;">Dean's List:</strong> 2021-2022, 2022-2023, 2023-2024 </p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Accomplishments</h2>
-				<div class="content">
-					<ul class="experience-details">
-						<li>Highest Academic Performance in A-levels and O-levels (2018-2022)</li>
-						<li>3rd Place in Map The System Canada</li>
-						<li>International Student Scholarship Award (2022 and 2023)</li>
-						<li>Bob Thorburn Memorial Scholarship</li>
-						<li>2nd Place Pure Mathematics - Caribbean Region (2020-2019)</li>
-						<li>7th Place in Caribbean Studies - Caribbean Region (2020)</li>
-						<li>9th Place Information Technology - Caribbean Region (2018)</li>
-					</ul>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Work Experience</h2>
-				<div class="content">
-					<div class="experience">
-						<h3 class="experience-title">FPGA Hardware Engineer Intern</h3>
-						<p class="experience-meta">Jan 2024 - Apr 2024 | Avalon Holographics Inc.,  St.John's, NL</p>
-						<ul class="experience-details">
-							<li>Updated and maintained existing FPGA designs and developed test benches in SystemVerilog</li>
-							<li>Upgraded the FPGA team's testing, debugging, and packaging scripts written in Python and TCL, automating the
-								running of tests saving the team 4-10 hours weekly</li>
-							<li>Integrated software features for the web application that interfaces with the Holographic Display using the Django
-								Framework (Python, HTML, CSS, JS)</li>
-							<li>Supported the FPGA Board Bring-Up process ensuring they were tested, validated and debugged successfully</li>
-						</ul>
-					</div>
-					<div class="experience">
-						<h3 class="experience-title">Embedded Systems Research Assistant</h3>
-						<p class="experience-meta">Jan 2024 - Present | MUN Faculty of Engineering and Applied Science, St.John's, NL</p>
-						<ul class="experience-details">
-							<li>Explore capabilities of Arduino, Raspberry Pi and STM32 Nucleo on Windows and Linux, focusing on motor
-								control applications</li>
-							<li>Implement control algorithms in C++, Julia, MATLAB, and Simulink to enhance student understanding of PD and
-								PID controllers in practical applications</li>
-						</ul>
-					</div>
-					<div class="experience">
-						<h3 class="experience-title">Underground Operations Engineer Intern</h3>
-						<p class="experience-meta">Aug 2022 - Jan 2023 | Vale S.A, St.John's, NL</p>
-						<ul class="experience-details">
-							<li>Integrated technology and digital innovation in the visualization and organisation of data</li>
-							<li>Utilized Python libraries like pandas and matplotlib to clean and visualize production data, providing insights into
-								equipment performance and potential maintenance needs</li>
-							<li>Provided technical support to clients via SAP ECC, and supported the supervision of the mining crews and ensured
-								they were trained in safety and maintenance courses</li>
-						</ul>
-					</div>
-					<div class="experience">
-						<h3 class="experience-title">OEM Applications Engineer Intern</h3>
-						<p class="experience-meta">Jan 2022 - Aug 2022 | Matrox Electronic Systems, Montreal, QC</p>
-						<ul class="experience-details">
-							<li>Analysed customer requirements for software and firmware packages and contributed to the development and
-								enhancement of SDKs, including APIs, device drivers, setup packages and sample code</li>
-							<li>Identified and resolved software bugs and implemented small-scale features to enhance product functionality using C#</li>
-							<li>Troubleshooted, diagnosed and resolved technical issues in current and past software releases and hardware products,
-								resolving a critical bug with a firmware fix saving the company $1 Million</li>
-						</ul>
-					</div>
-					<div class="experience">
-						<h3 class="experience-title">Academic Tutor</h3>
-						<p class="experience-meta">May 2022 - Dec 2023 | MUN Engineering Success Centre, St.John's, NL</p>
-						<ul class="experience-details">
-							<li>Explained concepts in Engineering, Mathematics, and Physics courses , and software concepts such as OOP, DSA to
-								students in the Faculty of Engineering</li>
-							<li>Created challenging problems and helpful exam strategies, preparing them for tests and improving their grades by 30%</li>
-						</ul>
-					</div>
-				</div>
-			</section>
-		</main>
+    <div class="stack gap-20">
+        <main class="wrapper about">
+            <Hero
+                title="About"
+                tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+            >
+                <Image
+                    alt="Amro Elgammal"
+                    width="1553"
+                    height="873"
+                    src="/assets/portrait.jpg"
+                    loading=eager
+                />
+            </Hero>
 
-		<ContactCTA />
-	</div>
+            <section>
+                <h2 class="section-title">Background</h2>
+                <div class="content">
+                    <p>
+                        As a seasoned fifth-year co-op computer engineering student, my journey has been shaped by a passion for harnessing technology to overcome challenges and make a tangible impact. Through a blend of academic rigor and hands-on professional experiences, I've cultivated a diverse technical skill set and I am consistently eager to refine my skills and stay abreast of new technologies.
+                    </p>
+                    <p>
+                        My commitment to problem-solving is not only reflected in my adeptness with coding languages and Hardware Description Languages (HDL), but also in my dedication to mastering the intricacies of embedded systems. 
+                        I always aim to get a holistic understanding in order to seamlessly bridge the gap between software and hardware and create innovative solutions.
+                    </p>
+                    <p>
+                        I've honed my communication and collaboration abilities through engaging in diverse projects and working within interdisciplinary teams. 
+                        This collaborative spirit, coupled with a relentless drive for excellence, propels me forward in my quest to contribute meaningfully to impactful projects.
+                    </p>
+                    <p>
+                        Eager to bring this amalgamation of skills and passion to a dynamic organization, I am committed to not only meeting the challenges of the ever-evolving tech landscape but also driving continuous growth as an engineering student. 
+                        My journey thus far is a testament to my resilience, adaptability, and unwavering dedication to leveraging technology for positive change.
+                    </p>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">Education</h2>
+                <div class="content">
+                    <p>Memorial University of Newfoundland</p>
+                    <p>Bachelor of Engineering: Computer Engineering | <strong style="color: #c561f6;">CGPA: 4.00</strong></p>
+                    <p><strong style="color: #c561f6;">Dean's List:</strong> 2021-2022, 2022-2023, 2023-2024 </p>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">Self-Directed Learning</h2>
+                <div class="content">
+                    <ul class="experience-details">
+                        <li>CS50's Introduction to Artificial Intelligence with Python: edX/Harvard University, 2024</li>
+                        <li>Machine Learning Specialization: Coursera/Andrew Ng, 2024</li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">Accomplishments</h2>
+                <div class="content">
+                    <ul class="experience-details">
+                        <li>Highest Academic Performance in A-levels and O-levels (2018-2022)</li>
+                        <li>3rd Place in Map The System Canada</li>
+                        <li>International Student Scholarship Award (2022 and 2023)</li>
+                        <li>Bob Thorburn Memorial Scholarship</li>
+                        <li>2nd Place Pure Mathematics - Caribbean Region (2020-2019)</li>
+                        <li>7th Place in Caribbean Studies - Caribbean Region (2020)</li>
+                        <li>9th Place Information Technology - Caribbean Region (2018)</li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">Work Experience</h2>
+                <div class="content">
+                    <div class="experience">
+                        <h3 class="experience-title">FPGA Hardware Engineer Intern</h3>
+                        <p class="experience-meta">Jan 2024 - Apr 2024 | Avalon Holographics Inc.,  St.John's, NL</p>
+                        <ul class="experience-details">
+                            <li>Updated and maintained existing FPGA designs and developed test benches in SystemVerilog utilizing UVM for thorough verification and validation</li>
+                            <li>Upgraded the FPGA team's testing, debugging, and packaging scripts written in Python and TCL, automating the
+                                running of tests saving the team 4-10 hours weekly</li>
+                            <li>Integrated software features for the web application that interfaces with the Holographic Display using the Django
+                                Framework (Python, HTML, CSS, JS)</li>
+                            <li>Supported the FPGA Board Bring-Up process ensuring they were tested, validated and debugged successfully</li>
+                        </ul>
+                    </div>
+                    <div class="experience">
+                        <h3 class="experience-title">Embedded Systems Research Assistant</h3>
+                        <p class="experience-meta">Jan 2024 - Present | MUN Faculty of Engineering and Applied Science, St.John's, NL</p>
+                        <ul class="experience-details">
+                            <li>Investigating and developing cost-efficient motor control solutions using Arduino, Raspberry Pi, and STM32 Nucleo across Windows and Linux, 
+                                contributing to the creation of an innovative educational platform for university students.</li>
+                            <li>Developed and implemented lab content for PD and PID controllers, coding control algorithms in C++, Julia, MATLAB, and Simulink, 
+                                significantly improving student comprehension and hands-on learning</li>
+                        </ul>
+                    </div>
+                    <div class="experience">
+                        <h3 class="experience-title">Underground Operations Engineer Intern</h3>
+                        <p class="experience-meta">Aug 2022 - Jan 2023 | Vale S.A, St.John's, NL</p>
+                        <ul class="experience-details">
+                            <li>Integrated technology and digital innovation in the visualization and organisation of data</li>
+                            <li>Developed and implemented Python scripts using pandas and matplotlib to visualize equipment performance data, 
+                                leading to a 20% reduction in maintenance-related downtimes</li>
+                            <li>Resolved SAP ECC issues and delivered targeted training to mining crews, enhancing safety compliance and maintenance procedures, 
+                                resulting in a 30% improvement in operational readiness</li>
+                        </ul>
+                    </div>
+                    <div class="experience">
+                        <h3 class="experience-title">OEM Applications Engineer Intern</h3>
+                        <p class="experience-meta">Jan 2022 - Aug 2022 | Matrox Electronic Systems, Montreal, QC</p>
+                        <ul class="experience-details">
+                            <li>Analysed customer requirements for software and firmware packages and contributed to the development and
+                                enhancement of SDKs, including APIs, device drivers, setup packages and sample code</li>
+                            <li>Resolved software bugs and implemented small-scale features to enhance product functionality using C#</li>
+                            <li>Troubleshot, diagnosed, and resolved complex technical issues in current and legacy software and hardware, 
+                                including a critical firmware bug fix that saved the company $1 Million in potential losses</li>
+                        </ul>
+                    </div>
+                    <div class="experience">
+                        <h3 class="experience-title">Academic Tutor</h3>
+                        <p class="experience-meta">May 2022 - Dec 2023 | MUN Engineering Success Centre, St.John's, NL</p>
+                        <ul class="experience-details">
+                            <li>Explained concepts in Engineering, Mathematics, and Physics courses , and software concepts such as OOP, DSA to
+                                students in the Faculty of Engineering</li>
+                            <li>Created challenging problems and helpful exam strategies, preparing them for tests and improving their grades by 30%</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">Relevant Courses</h2>
+                <div class="content">
+                    <ul class="experience-details">
+                        <li>Circuit Analysis</li>
+                        <li>Digital Logic</li>
+                        <li>Digital Systems</li>
+                        <li>Data Structures</li>
+                        <li>Microprocessors</li>
+                        <li>Software Development Practice</li>
+                        <li>Software Design</li>
+                        <li>Computer Architecture</li>
+                        <li>Communication Networks</li>
+                        <li>Algorithms: Correctness and Complexity</li>
+                        <li>Intro to Digital Signal Processing</li>
+                        <li>Concurrent Programming</li>
+                        <li>Image Processing and Applications</li>
+                        <li>Nature-Inspired Computing (Planned)</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <ContactCTA />
+    </div>
+
+    <script>
+        // Get the progress bar element
+        const progressBar = document.getElementById('progress-bar');
+    
+        // Only attach the scroll event listener if the progressBar exists
+        if (progressBar) {
+            // Update the progress bar width based on the scroll position
+            const updateProgressBar = () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (scrollTop / scrollHeight) * 100;
+                progressBar.style.width = `${scrolled}%`;
+            };
+    
+            // Attach the update function to the scroll event
+            window.addEventListener('scroll', updateProgressBar);
+        }
+    </script>
 </BaseLayout>
 
 <style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
+    /* Scroll Progress Bar */
+    #progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 5px;
+        background-color: #c561f6; /* Set your preferred color */
+        z-index: 1000;
+        transition: width 0.25s ease-out;
+    }
 
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
+    .about {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+    }
 
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
+    img {
+        margin-top: 1.5rem;
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow-md);
+    }
 
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        color: var(--gray-200);
+    }
 
-	.content {
-		grid-column: 2 / 4;
-	}
+    .section-title {
+        grid-column-start: 1;
+        font-size: var(--text-xl);
+        color: var(--gray-0);
+    }
 
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+    .content {
+        grid-column: 2 / 4;
+    }
 
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
-	.experience {
-    margin-bottom: 2rem;
-}
+    .content :global(a) {
+        text-decoration: 1px solid underline transparent;
+        text-underline-offset: 0.25em;
+        transition: text-decoration-color var(--theme-transition);
+    }
 
-	.experience-title {
-		font-size: 1.5rem;
-		font-weight: bold;
-		color: #c561f6;
-	}
+    .content :global(a:hover),
+    .content :global(a:focus) {
+        text-decoration-color: currentColor;
+    }
 
-	.experience-meta {
-		font-size: 1rem;
-		color: var(--gray-300);
-		margin-bottom: 0.5rem;
-	}
-	.experience-details {
-    list-style-type: none;
-    padding-left: 1.5rem;
-}
+    .experience {
+        margin-bottom: 2rem;
+    }
 
-.experience-details li {
-    position: relative;
-    padding-left: 1rem;
-    margin-bottom: 0.5rem;
-    color: var(--gray-300);
-}
+    .experience-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #c561f6;
+    }
 
-.experience-details li::before {
-    content: "▶"; /* Unicode character for a right-pointing triangle */
-    position: absolute;
-    left: 0;
-    color: #c561f6; /* Desired color for the triangle */
-    margin-left: -1.5rem; /* Adjust the spacing between the triangle and text */
-}
+    .experience-meta {
+        font-size: 1rem;
+        color: var(--gray-300);
+        margin-bottom: 0.5rem;
+    }
 
+    .experience-details {
+        list-style-type: none;
+        padding-left: 1.5rem;
+    }
 
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
+    .experience-details li {
+        position: relative;
+        padding-left: 1rem;
+        margin-bottom: 0.5rem;
+        color: var(--gray-300);
+    }
 
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
+    .experience-details li::before {
+        content: "▶"; /* Unicode character for a right-pointing triangle */
+        position: absolute;
+        left: 0;
+        color: #c561f6; /* Desired color for the triangle */
+        margin-left: -1.5rem; /* Adjust the spacing between the triangle and text */
+    }
 
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
+    @media (min-width: 50em) {
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 60% 1fr;
+        }
+
+        .about > :global(:first-child) {
+            grid-column-start: 2;
+        }
+
+        section {
+            display: contents;
+            font-size: var(--text-lg);
+        }
+    }
 </style>
